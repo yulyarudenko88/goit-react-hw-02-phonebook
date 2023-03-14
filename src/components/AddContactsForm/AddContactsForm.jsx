@@ -5,8 +5,6 @@ import { Form, Label, Input } from './AddContactsForm.styled';
 import { Button } from 'components/Button/Button';
 
 export class AddContactsForm extends Component {
-  newId = nanoid();
-
   state = {
     name: '',
     number: '',
@@ -20,7 +18,7 @@ export class AddContactsForm extends Component {
   handleSubmit = evt => {
     evt.preventDefault();
     console.log(this.state);
-    this.props.onSubmit(this.state);
+    this.props.onSubmit({...this.state});
     this.formReset();
   };
 
@@ -40,7 +38,7 @@ export class AddContactsForm extends Component {
           required
           value={this.state.name}
           onChange={this.handleChange}
-          id={this.newId}
+          id={nanoid()}
         />
 
         <Label htmlFor={this.newId}>Number</Label>
@@ -52,7 +50,7 @@ export class AddContactsForm extends Component {
           required
           value={this.state.number}
           onChange={this.handleChange}
-          id={this.newId}
+          id={nanoid()}
         />
         <Button title="Add contact" type="submit" />
       </Form>

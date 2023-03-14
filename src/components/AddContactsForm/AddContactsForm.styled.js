@@ -20,9 +20,10 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
+box-sizing: border-box;
   display: block;
   outline: none;
-  width: 290px;
+  width: 100%;
   padding: 5px;
   margin-bottom: 10px;
   border-radius: 4px;

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { nanoid } from 'nanoid';
+
 import { Section } from 'components/Section/Section';
 import { AddContactsForm } from 'components/AddContactsForm/AddContactsForm';
-import { ContactList } from 'components/ContactList/ContactList';
+import { ContactsList } from 'components/ContactsList/ContactsList';
 // import { Statistics } from 'components/Statistics/Statistics';
 
 export class App extends Component {
@@ -9,28 +11,39 @@ export class App extends Component {
     contacts: [],
   };
 
-  formSubmit = data => {
-    console.log(this.state);
-    // const isMatch = this.state.contacts.find(
-    //   contact => contact.name.toLowerCase() === data.name.toLowerCase()
-    // );
+  
+  addContact = ({ name, number }) => {
+    const contact = {
+      id: nanoid(),
+      name,
+      number,
+    };
+
+    console.log(contact);
+    this.setState(({ contacts }) => ({
+      contacts: [contact, ...contacts],
+    }));
   };
 
   deleteContact = contactId => {
-    this.setState(prevState => ({
-      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
+    console.log(contactId);
+    this.setState(({ contacts }) => ({
+      contacts: contacts.filter(contact => contact.id !== contactId),
     }));
   };
 
   render() {
-    const {contacts} = this.state;
+    const { contacts } = this.state;
     return (
       <>
         <Section title="Phonebook">
-          <AddContactsForm formSubmit={() => this.formSubmit()} />
+          <AddContactsForm onSubmit={this.addContact} />
         </Section>
         <Section title="Contacts">
-          <ContactList contacts={contacts} onDeleteContact={this.deleteContact} />
+          <ContactsList
+            contacts={contacts}
+            onDeleteContact={this.deleteContact}
+          />
         </Section>
       </>
     );
