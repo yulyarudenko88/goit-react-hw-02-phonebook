@@ -1,24 +1,27 @@
 import PropTypes from 'prop-types';
-import { FiUser } from "react-icons/fi";
-import { Button } from 'components/Button/Button';
-import {Contact} from './ContactsList.styled';
+import { FiUser } from 'react-icons/fi';
+// import { Button } from 'components/Button/Button';
+import { Contact } from './ContactsList.styled';
 
-export const ContactsList = ({ contacts, onDeleteContact
-}) => {
-  console.log(onDeleteContact);
-  
-  return <ul>
-    {contacts.map(({ id, name, number }) => (
-      <Contact key={id} >
-        <FiUser />
-        {name}: {number}
-        <Button title="Delete" type="button" onClick={() => onDeleteContact(id)} />
-        {/* <button type="button"  onClick={() => onDeleteContact(id)}>
+export const ContactsList = ({ contacts, onDeleteContact }) => {
+  // console.log(onDeleteContact);
+
+  return (
+    <ul>
+      {contacts.map(({ id, name, number }) => (
+        <Contact key={id} >
+          <FiUser />
+          {name}: {number}
+          {/* <Button type="submit" onClick={() => onDeleteContact(id)}>
+            Delete
+          </Button> */}
+          <button type="button"  onClick={() => onDeleteContact(id)}>
           Delete
-        </button> */}
-      </Contact>
-    ))}
-</ul>
+        </button>
+        </Contact>
+      ))}
+    </ul>
+  );
 };
 
 ContactsList.propTypes = {

@@ -17,7 +17,7 @@ export class AddContactsForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    // console.log(this.state);
     this.props.onSubmit({...this.state});
     this.formReset();
   };
@@ -52,7 +52,7 @@ export class AddContactsForm extends Component {
           onChange={this.handleChange}
           id={nanoid()}
         />
-        <Button title="Add contact" type="submit" />
+        <Button type="submit">Add contact</Button>
       </Form>
     );
   }

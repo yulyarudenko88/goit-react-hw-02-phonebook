@@ -24,10 +24,10 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-box-sizing: border-box;
+  box-sizing: border-box;
   display: block;
   outline: none;
-  width: 330px;
+  width: 340px;
   padding: 5px;
   margin-bottom: 10px;
   border-radius: 4px;
@@ -40,4 +40,3 @@ box-sizing: border-box;
     border: 1px solid #6a0dad;
   }
 `;
-
