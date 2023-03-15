@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { FiUser } from "react-icons/fi";
-// import { Button } from 'components/Button/Button';
+import { Button } from 'components/Button/Button';
 import {Contact} from './ContactsList.styled';
 
 export const ContactsList = ({ contacts, onDeleteContact
@@ -12,10 +12,10 @@ export const ContactsList = ({ contacts, onDeleteContact
       <Contact key={id} >
         <FiUser />
         {name}: {number}
-        {/* <Button title="Delete" type="button" onClick={() => onDeleteContact(id)} /> */}
-        <button type="button"  onClick={() => onDeleteContact(id)}>
+        <Button title="Delete" type="button" onClick={() => onDeleteContact(id)} />
+        {/* <button type="button"  onClick={() => onDeleteContact(id)}>
           Delete
-        </button>
+        </button> */}
       </Contact>
     ))}
 </ul>
