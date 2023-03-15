@@ -15,8 +15,8 @@ export class AddContactsForm extends Component {
     this.setState({ [name]: value });
   };
 
-  handleSubmit = evt => {
-    evt.preventDefault();
+  handleSubmit = e => {
+    e.preventDefault();
     console.log(this.state);
     this.props.onSubmit({...this.state});
     this.formReset();
@@ -29,7 +29,7 @@ export class AddContactsForm extends Component {
   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
-        <Label htmlFor={this.newId}>Name</Label>
+        <Label htmlFor={nanoid()}>Name</Label>
         <Input
           type="text"
           name="name"
@@ -41,7 +41,7 @@ export class AddContactsForm extends Component {
           id={nanoid()}
         />
 
-        <Label htmlFor={this.newId}>Number</Label>
+        <Label htmlFor={nanoid()}>Number</Label>
         <Input
           type="tel"
           name="number"

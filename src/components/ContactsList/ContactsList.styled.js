@@ -1,11 +1,16 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Contact = styled.li`
-display: flex;
-justify-content: space-between;
+  display: flex;
+
   gap: 10px;
-  max-width: 300px;
+  max-width: 310px;
   align-items: center;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #f7f7f7;`
+  background-color: #f7f7f7;
+
+  button {
+    margin-left: auto;
+  }
+`;

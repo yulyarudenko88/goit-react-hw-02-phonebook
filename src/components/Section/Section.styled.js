@@ -7,6 +7,5 @@ export const Block = styled.div`
 
 export const Title = styled.h2`
   font-size: 20px;
-  margin-bottom: 20px;
-  color: #6a0dad;
+  margin-bottom: 10px;
 `;
